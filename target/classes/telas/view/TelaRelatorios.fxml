@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.geometry.Insets?>
+
+<VBox xmlns="http://javafx.com/javafx"
+      xmlns:fx="http://javafx.com/fxml"
+      spacing="20" alignment="TOP_CENTER"
+      style="-fx-background-color: black; -fx-padding: 30;">
+    
+    <Label text="📊 Relatórios"
+           style="-fx-font-size: 24px; -fx-font-weight: bold; -fx-text-fill: #00ffff;" />
+
+    <VBox spacing="15" alignment="CENTER" style="-fx-background-color: #1C1C1C; -fx-padding: 20; -fx-background-radius: 10;">
+        <Label text="Relatórios em Desenvolvimento" 
+               style="-fx-text-fill: #00ffff; -fx-font-size: 16px;"/>
+        <Label text="Em breve você terá acesso a relatórios completos do seu negócio" 
+               style="-fx-text-fill: #FF6B00; -fx-font-size: 14px;"/>
+    </VBox>
+</VBox>

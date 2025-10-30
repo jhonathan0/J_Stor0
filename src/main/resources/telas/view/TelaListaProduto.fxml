@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.geometry.Insets?>
+<?import org.kordamp.ikonli.javafx.FontIcon?>
+
+<AnchorPane xmlns="http://javafx.com/javafx/8"
+            xmlns:fx="http://javafx.com/fxml"
+            fx:controller="crud_produtos.ProdutoListController"
+            prefWidth="1000" prefHeight="600"
+            stylesheets="@/globalStyle/style.css">
+
+    <VBox style="-fx-background-color: transparent;" 
+          AnchorPane.topAnchor="0.0" AnchorPane.bottomAnchor="0.0" 
+          AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0"
+          alignment="CENTER" spacing="20">
+
+        <!-- TÍTULO CENTRALIZADO COM EFEITO NEON -->
+        <Label text="🎯 GERENCIAMENTO DE PRODUTOS" styleClass="titulo-centralizado"
+               style="-fx-font-size: 32px; -fx-effect: dropshadow( one-pass-box , rgba(0, 255, 255, 0.9) , 12, 0.0 , 0 , 0 );"/>
+
+        <!-- BARRA DE PESQUISA E AÇÕES -->
+        <HBox spacing="15" alignment="CENTER" style="-fx-background-color: #1C1C1C; -fx-padding: 15; -fx-background-radius: 10;">
+            
+            <!-- BARRA DE PESQUISA ESTILIZADA -->
+            <HBox styleClass="barra-pesquisa" spacing="5" alignment="CENTER_LEFT">
+                <TextField fx:id="txtPesquisa" promptText="🔍 Pesquisar produtos..." 
+                          style="-fx-background-color: transparent; -fx-border-width: 0; -fx-font-family: 'Segoe UI'; -fx-pref-width: 300; -fx-font-size: 14px;"/>
+                <Button onAction="#pesquisarProdutos" style="-fx-background-color: transparent; -fx-border-width: 0;">
+                    <graphic>
+                        <FontIcon iconLiteral="fas-search" style="-fx-icon-size: 16px; -fx-fill: #00ffff;"/>
+                    </graphic>
+                </Button>
+            </HBox>
+            
+            <Region HBox.hgrow="ALWAYS"/>
+            
+            <!-- BOTÕES DE AÇÃO -->
+            <Button text="🚀 CADASTRAR" onAction="#abrirCadastro" styleClass="botao-destaque"
+                   style="-fx-font-family: 'Segoe UI'; -fx-font-size: 14px; -fx-font-weight: bold;"/>
+            <Button text="✏️ EDITAR" onAction="#editarProduto" styleClass="button02"
+                   style="-fx-font-family: 'Segoe UI'; -fx-font-size: 14px;"/>
+            <Button text="🗑️ EXCLUIR" onAction="#excluirProduto" styleClass="button02"
+                   style="-fx-font-family: 'Segoe UI'; -fx-font-size: 14px;"/>
+        </HBox>
+
+        <!-- CONTAINER DA TABELA CENTRALIZADA -->
+        <VBox styleClass="tabela-container" alignment="CENTER" spacing="10">
+ <!-- Atualize os fx:id das colunas para corresponder aos novos nomes -->
+<TableView fx:id="tableProdutos" prefWidth="900" prefHeight="400">
+    <columns>
+        <TableColumn fx:id="colId" text="🆔 ID" prefWidth="60" styleClass="coluna-tabela"/>
+        <TableColumn fx:id="colCodigo" text="📋 CÓDIGO" prefWidth="100" styleClass="coluna-tabela"/>
+        <TableColumn fx:id="colNome" text="👕 NOME" prefWidth="150" styleClass="coluna-tabela"/>
+        <TableColumn fx:id="colCategoria" text="📁 CATEGORIA" prefWidth="120" styleClass="coluna-tabela"/>
+        <TableColumn fx:id="colTamanho" text="📏 TAMANHO" prefWidth="90" styleClass="coluna-tabela"/>
+        <TableColumn fx:id="colCor" text="🎨 COR" prefWidth="90" styleClass="coluna-tabela"/>
+        <TableColumn fx:id="colPreco" text="💰 PREÇO" prefWidth="100" styleClass="coluna-tabela"/>
+        <TableColumn fx:id="colEstoque" text="📦 ESTOQUE" prefWidth="90" styleClass="coluna-tabela"/>
+        <TableColumn fx:id="colData" text="📅 DATA CADASTRO" prefWidth="130" styleClass="coluna-tabela"/>
+    </columns>
+</TableView>
+            
+            <!-- RODAPÉ INFORMATIVO -->
+            <Label text="✨ Total de produtos: Utilize os botões acima para gerenciar seu estoque" 
+                   style="-fx-text-fill: #00ffff; -fx-font-size: 12px; -fx-font-style: italic;"/>
+        </VBox>
+    </VBox>
+</AnchorPane>

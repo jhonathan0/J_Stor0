@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.geometry.Insets?>
+
+<BorderPane xmlns="http://javafx.com/javafx" 
+            xmlns:fx="http://javafx.com/fxml" 
+            style="-fx-background-color: linear-gradient(to bottom right, #000000, #1a1a1a);">
+    
+    <center>
+        <VBox alignment="CENTER" spacing="40" style="-fx-padding: 50;">
+            <!-- Logo -->
+            <VBox alignment="CENTER" spacing="10">
+                <Label text="👕 J_STOR" style="-fx-text-fill: #00ffff; -fx-font-size: 32px; -fx-font-weight: bold; -fx-effect: dropshadow(three-pass-box, rgba(0,255,255,0.5), 10,0,0,3);"/>
+                <Label text="Sistema de Gestão de Moda" style="-fx-text-fill: #cccccc; -fx-font-size: 14px;"/>
+            </VBox>
+            
+            <!-- Formulário de Login -->
+            <VBox alignment="CENTER" spacing="20" style="-fx-background-color: rgba(255,255,255,0.05); -fx-background-radius: 15; -fx-padding: 40; -fx-border-color: #00ffff; -fx-border-width: 2; -fx-border-radius: 15;">
+                <Label text="Login" style="-fx-text-fill: #00ffff; -fx-font-size: 24px; -fx-font-weight: bold;"/>
+                
+                <VBox spacing="15" style="-fx-pref-width: 300;">
+                    <!-- Campo Usuário -->
+                    <VBox spacing="5">
+                        <Label text="Usuário:" style="-fx-text-fill: #ffffff; -fx-font-weight: bold;"/>
+                        <TextField fx:id="txtUsuario" style="-fx-background-radius: 8; -fx-border-radius: 8; -fx-padding: 12; -fx-font-size: 14px;" promptText="Digite seu usuário"/>
+                    </VBox>
+                    
+                    <!-- Campo Senha -->
+                    <VBox spacing="5">
+                        <Label text="Senha:" style="-fx-text-fill: #ffffff; -fx-font-weight: bold;"/>
+                        <PasswordField fx:id="txtSenha" style="-fx-background-radius: 8; -fx-border-radius: 8; -fx-padding: 12; -fx-font-size: 14px;" promptText="Digite sua senha"/>
+                    </VBox>
+                    
+                    <!-- Botão Entrar -->
+                    <Button fx:id="btnEntrar" text="Entrar" style="-fx-background-color: linear-gradient(to right, #00ffff, #0080ff); -fx-text-fill: black; -fx-font-weight: bold; -fx-font-size: 16px; -fx-background-radius: 8; -fx-padding: 12; -fx-pref-width: 300;" onAction="#fazerLogin"/>
+                    
+                    <!-- Lembrar senha -->
+                    <CheckBox fx:id="checkLembrar" text="Lembrar usuário" style="-fx-text-fill: #cccccc;"/>
+                </VBox>
+            </VBox>
+            
+            <!-- Rodapé -->
+            <Label text="© 2024 J_STOR - Todos os direitos reservados" style="-fx-text-fill: #666666; -fx-font-size: 12px;"/>
+        </VBox>
+    </center>
+</BorderPane>
